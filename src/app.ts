@@ -1,12 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import { router as bookRoutes} from './routes/bookRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 //Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 //connect to mongo
